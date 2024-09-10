@@ -3,29 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clase 6: Meses del Año</title>
+    <title>Clase 6: Frases Comunes</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Clase 6: Meses del Año</h1>
-        <p>En esta clase aprenderás los meses del año en inglés:</p>
+        <h1>Clase 6: Frases Comunes</h1>
+        <p>En esta clase aprenderás frases comunes en inglés:</p>
         <ul>
-            <li>January – Enero</li>
-            <li>February – Febrero</li>
-            <li>March – Marzo</li>
-            <li>April – Abril</li>
-            <li>May – Mayo</li>
-            <li>June – Junio</li>
-            <li>July – Julio</li>
-            <li>August – Agosto</li>
-            <li>September – Septiembre</li>
-            <li>October – Octubre</li>
-            <li>November – Noviembre</li>
-            <li>December – Diciembre</li>
+            <li>Thank you – Gracias</li>
+            <li>Sorry – Lo siento</li>
+            <li>Please – Por favor</li>
+            <li>Excuse me – Disculpe</li>
+            <li>Yes – Sí</li>
+            <li>No – No</li>
         </ul>
-        <button onclick="completeClass(6)">Completar Clase</button>
+        
+        <h2>Actividad: Traduce las frases</h2>
+        <p>Escribe las traducciones correctas en inglés:</p>
+        
+        <form id="activity6">
+            <label for="q1">1. Gracias:</label><br>
+            <input type="text" id="q1" name="q1"><br><br>
+            <label for="q2">2. Lo siento:</label><br>
+            <input type="text" id="q2" name="q2"><br><br>
+            <label for="q3">3. Por favor:</label><br>
+            <input type="text" id="q3" name="q3"><br><br>
+            <label for="q4">4. Disculpe:</label><br>
+            <input type="text" id="q4" name="q4"><br><br>
+            <label for="q5">5. Sí:</label><br>
+            <input type="text" id="q5" name="q5"><br><br>
+            <label for="q6">6. No:</label><br>
+            <input type="text" id="q6" name="q6"><br><br>
+            <input type="button" value="Verificar" onclick="validateActivity6()">
+        </form>
+        
+        <p id="feedback"></p>
+
+        <button id="nextBtn" style="display:none;" onclick="completeClass(6)">Avanzar a la Siguiente Clase</button>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        function validateActivity6() {
+            const q1 = document.getElementById("q1").value.toLowerCase();
+            const q2 = document.getElementById("q2").value.toLowerCase();
+            const q3 = document.getElementById("q3").value.toLowerCase();
+            const q4 = document.getElementById("q4").value.toLowerCase();
+            const q5 = document.getElementById("q5").value.toLowerCase();
+            const q6 = document.getElementById("q6").value.toLowerCase();
+
+            if (q1 === "thank you" && q2 === "sorry" && q3 === "please" && q4 === "excuse me" && q5 === "yes" && q6 === "no") {
+                document.getElementById("feedback").innerText = "¡Correcto! Puedes avanzar a la siguiente clase.";
+                document.getElementById("nextBtn").style.display = "inline";
+            } else {
+                document.getElementById("feedback").innerText = "Algunas respuestas son incorrectas. Intenta de nuevo.";
+            }
+        }
+    </script>
 </body>
 </html>
