@@ -3,20 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clase 11: Verbos en Pasado</title>
+    <title>Clase 11: Verbo To Be</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Clase 11: Verbos en Pasado</h1>
-        <p>En esta clase aprenderás a conjugar verbos en pasado:</p>
+        <h1>Clase 11: Verbo To Be</h1>
+        <p>En esta clase aprenderás cómo usar el verbo "to be" en presente:</p>
         <ul>
-            <li>I ate – Yo comí</li>
-            <li>You ate – Tú comiste</li>
-            <li>He/She ate – Él/Ella comió</li>
+            <li>I am – Yo soy/estoy</li>
+            <li>You are – Tú eres/estás</li>
+            <li>He is – Él es/está</li>
+            <li>She is – Ella es/está</li>
+            <li>It is – Eso es/está</li>
+            <li>We are – Nosotros somos/estamos</li>
+            <li>They are – Ellos son/están</li>
         </ul>
-        <button onclick="completeClass(11)">Completar Clase</button>
+        
+        <h2>Actividad: Completa las frases</h2>
+        <p>Completa las frases con la forma correcta del verbo "to be":</p>
+        
+        <form id="activity11">
+            <label for="q1">1. I ____ happy.</label><br>
+            <input type="text" id="q1" name="q1"><br><br>
+            <label for="q2">2. She ____ a student.</label><br>
+            <input type="text" id="q2" name="q2"><br><br>
+            <label for="q3">3. We ____ in the park.</label><br>
+            <input type="text" id="q3" name="q3"><br><br>
+            <label for="q4">4. They ____ friends.</label><br>
+            <input type="text" id="q4" name="q4"><br><br>
+            <label for="q5">5. He ____ tired.</label><br>
+            <input type="text" id="q5" name="q5"><br><br>
+            <input type="button" value="Verificar" onclick="validateActivity11()">
+        </form>
+        
+        <p id="feedback"></p>
+
+        <button id="nextBtn" style="display:none;" onclick="completeClass(11)">Avanzar a la Siguiente Clase</button>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        function validateActivity11() {
+            const q1 = document.getElementById("q1").value.toLowerCase();
+            const q2 = document.getElementById("q2").value.toLowerCase();
+            const q3 = document.getElementById("q3").value.toLowerCase();
+            const q4 = document.getElementById("q4").value.toLowerCase();
+            const q5 = document.getElementById("q5").value.toLowerCase();
+
+            if (q1 === "am" && q2 === "is" && q3 === "are" && q4 === "are" && q5 === "is") {
+                document.getElementById("feedback").innerText = "¡Correcto! Puedes avanzar a la siguiente clase.";
+                document.getElementById("nextBtn").style.display = "inline";
+            } else {
+                document.getElementById("feedback").innerText = "Algunas respuestas son incorrectas. Intenta de nuevo.";
+            }
+        }
+    </script>
 </body>
 </html>
