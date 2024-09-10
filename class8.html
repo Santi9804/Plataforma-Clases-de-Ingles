@@ -3,21 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clase 8: Profesiones</title>
+    <title>Clase 8: Comida</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Clase 8: Profesiones</h1>
-        <p>En esta clase aprenderás nombres de profesiones comunes:</p>
+        <h1>Clase 8: Comida</h1>
+        <p>En esta clase aprenderás palabras relacionadas con la comida en inglés:</p>
         <ul>
-            <li>Doctor – Doctor</li>
-            <li>Teacher – Profesor</li>
-            <li>Engineer – Ingeniero</li>
-            <li>Lawyer – Abogado</li>
+            <li>Apple – Manzana</li>
+            <li>Bread – Pan</li>
+            <li>Cheese – Queso</li>
+            <li>Milk – Leche</li>
+            <li>Chicken – Pollo</li>
         </ul>
-        <button onclick="completeClass(8)">Completar Clase</button>
+        
+        <h2>Actividad: Traduce la comida</h2>
+        <p>Escribe las traducciones correctas en inglés:</p>
+        
+        <form id="activity8">
+            <label for="q1">1. Manzana:</label><br>
+            <input type="text" id="q1" name="q1"><br><br>
+            <label for="q2">2. Pan:</label><br>
+            <input type="text" id="q2" name="q2"><br><br>
+            <label for="q3">3. Queso:</label><br>
+            <input type="text" id="q3" name="q3"><br><br>
+            <label for="q4">4. Leche:</label><br>
+            <input type="text" id="q4" name="q4"><br><br>
+            <label for="q5">5. Pollo:</label><br>
+            <input type="text" id="q5" name="q5"><br><br>
+            <input type="button" value="Verificar" onclick="validateActivity8()">
+        </form>
+        
+        <p id="feedback"></p>
+
+        <button id="nextBtn" style="display:none;" onclick="completeClass(8)">Avanzar a la Siguiente Clase</button>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        function validateActivity8() {
+            const q1 = document.getElementById("q1").value.toLowerCase();
+            const q2 = document.getElementById("q2").value.toLowerCase();
+            const q3 = document.getElementById("q3").value.toLowerCase();
+            const q4 = document.getElementById("q4").value.toLowerCase();
+            const q5 = document.getElementById("q5").value.toLowerCase();
+
+            if (q1 === "apple" && q2 === "bread" && q3 === "cheese" && q4 === "milk" && q5 === "chicken") {
+                document.getElementById("feedback").innerText = "¡Correcto! Puedes avanzar a la siguiente clase.";
+                document.getElementById("nextBtn").style.display = "inline";
+            } else {
+                document.getElementById("feedback").innerText = "Algunas respuestas son incorrectas. Intenta de nuevo.";
+            }
+        }
+    </script>
 </body>
 </html>
