@@ -3,19 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clase 4: Números y Colores</title>
+    <title>Clase 4: Números</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Clase 4: Números y Colores</h1>
-        <p>En esta clase aprenderás los números y colores en inglés:</p>
+        <h1>Clase 4: Números</h1>
+        <p>En esta clase aprenderás los números del 1 al 5 en inglés:</p>
         <ul>
-            <li>One, two, three... – Uno, dos, tres...</li>
-            <li>Red, blue, green... – Rojo, azul, verde...</li>
+            <li>One – Uno</li>
+            <li>Two – Dos</li>
+            <li>Three – Tres</li>
+            <li>Four – Cuatro</li>
+            <li>Five – Cinco</li>
         </ul>
-        <button onclick="completeClass(4)">Completar Clase</button>
+        
+        <h2>Actividad: Traduce los números</h2>
+        <p>Escribe las traducciones correctas en inglés:</p>
+        
+        <form id="activity4">
+            <label for="q1">1. Uno:</label><br>
+            <input type="text" id="q1" name="q1"><br><br>
+            <label for="q2">2. Dos:</label><br>
+            <input type="text" id="q2" name="q2"><br><br>
+            <label for="q3">3. Tres:</label><br>
+            <input type="text" id="q3" name="q3"><br><br>
+            <label for="q4">4. Cuatro:</label><br>
+            <input type="text" id="q4" name="q4"><br><br>
+            <label for="q5">5. Cinco:</label><br>
+            <input type="text" id="q5" name="q5"><br><br>
+            <input type="button" value="Verificar" onclick="validateActivity4()">
+        </form>
+        
+        <p id="feedback"></p>
+
+        <button id="nextBtn" style="display:none;" onclick="completeClass(4)">Avanzar a la Siguiente Clase</button>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        function validateActivity4() {
+            const q1 = document.getElementById("q1").value.toLowerCase();
+            const q2 = document.getElementById("q2").value.toLowerCase();
+            const q3 = document.getElementById("q3").value.toLowerCase();
+            const q4 = document.getElementById("q4").value.toLowerCase();
+            const q5 = document.getElementById("q5").value.toLowerCase();
+
+            if (q1 === "one" && q2 === "two" && q3 === "three" && q4 === "four" && q5 === "five") {
+                document.getElementById("feedback").innerText = "¡Correcto! Puedes avanzar a la siguiente clase.";
+                document.getElementById("nextBtn").style.display = "inline";
+            } else {
+                document.getElementById("feedback").innerText = "Algunas respuestas son incorrectas. Intenta de nuevo.";
+            }
+        }
+    </script>
 </body>
 </html>
