@@ -15,8 +15,38 @@
             <li>How are you? – ¿Cómo estás?</li>
             <li>Where are you from? – ¿De dónde eres?</li>
         </ul>
-        <button onclick="completeClass(2)">Completar Clase</button>
+        
+        <h2>Actividad: Traduce estas preguntas</h2>
+        <p>Escribe las traducciones correctas en inglés:</p>
+        
+        <form id="activity2">
+            <label for="q1">1. ¿Cómo te llamas?</label><br>
+            <input type="text" id="q1" name="q1"><br><br>
+            <label for="q2">2. ¿Cómo estás?</label><br>
+            <input type="text" id="q2" name="q2"><br><br>
+            <label for="q3">3. ¿De dónde eres?</label><br>
+            <input type="text" id="q3" name="q3"><br><br>
+            <input type="button" value="Verificar" onclick="validateActivity2()">
+        </form>
+        
+        <p id="feedback"></p>
+
+        <button id="nextBtn" style="display:none;" onclick="completeClass(2)">Avanzar a la Siguiente Clase</button>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        function validateActivity2() {
+            const q1 = document.getElementById("q1").value.toLowerCase();
+            const q2 = document.getElementById("q2").value.toLowerCase();
+            const q3 = document.getElementById("q3").value.toLowerCase();
+
+            if (q1 === "what is your name?" && q2 === "how are you?" && q3 === "where are you from?") {
+                document.getElementById("feedback").innerText = "¡Correcto! Puedes avanzar a la siguiente clase.";
+                document.getElementById("nextBtn").style.display = "inline";
+            } else {
+                document.getElementById("feedback").innerText = "Algunas respuestas son incorrectas. Intenta de nuevo.";
+            }
+        }
+    </script>
 </body>
 </html>
