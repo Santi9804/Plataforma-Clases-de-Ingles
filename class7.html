@@ -28,4 +28,37 @@
             <label for="q2">2. Padre:</label><br>
             <input type="text" id="q2" name="q2"><br><br>
             <label for="q3">3. Hermano:</label><br>
-            <input type="text" id="q3" name="q3"><br><br
+            <input type="text" id="q3" name="q3"><br><br>
+            <label for="q4">4. Hermana:</label><br>
+            <input type="text" id="q4" name="q4"><br><br>
+            <label for="q5">5. Abuela:</label><br>
+            <input type="text" id="q5" name="q5"><br><br>
+            <label for="q6">6. Abuelo:</label><br>
+            <input type="text" id="q6" name="q6"><br><br>
+            <input type="button" value="Verificar" onclick="validateActivity7()">
+        </form>
+        
+        <p id="feedback"></p>
+
+        <button id="nextBtn" style="display:none;" onclick="completeClass(7)">Avanzar a la Siguiente Clase</button>
+    </div>
+
+    <script>
+        function validateActivity7() {
+            const q1 = document.getElementById("q1").value.toLowerCase();
+            const q2 = document.getElementById("q2").value.toLowerCase();
+            const q3 = document.getElementById("q3").value.toLowerCase();
+            const q4 = document.getElementById("q4").value.toLowerCase();
+            const q5 = document.getElementById("q5").value.toLowerCase();
+            const q6 = document.getElementById("q6").value.toLowerCase();
+
+            if (q1 === "mother" && q2 === "father" && q3 === "brother" && q4 === "sister" && q5 === "grandmother" && q6 === "grandfather") {
+                document.getElementById("feedback").innerText = "¡Correcto! Puedes avanzar a la siguiente clase.";
+                document.getElementById("nextBtn").style.display = "inline";
+            } else {
+                document.getElementById("feedback").innerText = "Algunas respuestas son incorrectas. Intenta de nuevo.";
+            }
+        }
+    </script>
+</body>
+</html>
