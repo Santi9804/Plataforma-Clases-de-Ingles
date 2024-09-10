@@ -3,20 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clase 10: Verbos en Presente</title>
+    <title>Clase 10: Ropa</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Clase 10: Verbos en Presente</h1>
-        <p>En esta clase aprenderás a conjugar verbos en presente:</p>
+        <h1>Clase 10: Ropa</h1>
+        <p>En esta clase aprenderás palabras relacionadas con la ropa en inglés:</p>
         <ul>
-            <li>I eat – Yo como</li>
-            <li>You eat – Tú comes</li>
-            <li>He/She eats – Él/Ella come</li>
+            <li>Shirt – Camisa</li>
+            <li>Pants – Pantalones</li>
+            <li>Dress – Vestido</li>
+            <li>Shoes – Zapatos</li>
+            <li>Hat – Sombrero</li>
         </ul>
-        <button onclick="completeClass(10)">Completar Clase</button>
+        
+        <h2>Actividad: Traduce la ropa</h2>
+        <p>Escribe las traducciones correctas en inglés:</p>
+        
+        <form id="activity10">
+            <label for="q1">1. Camisa:</label><br>
+            <input type="text" id="q1" name="q1"><br><br>
+            <label for="q2">2. Pantalones:</label><br>
+            <input type="text" id="q2" name="q2"><br><br>
+            <label for="q3">3. Vestido:</label><br>
+            <input type="text" id="q3" name="q3"><br><br>
+            <label for="q4">4. Zapatos:</label><br>
+            <input type="text" id="q4" name="q4"><br><br>
+            <label for="q5">5. Sombrero:</label><br>
+            <input type="text" id="q5" name="q5"><br><br>
+            <input type="button" value="Verificar" onclick="validateActivity10()">
+        </form>
+        
+        <p id="feedback"></p>
+
+        <button id="nextBtn" style="display:none;" onclick="completeClass(10)">Avanzar a la Siguiente Clase</button>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        function validateActivity10() {
+            const q1 = document.getElementById("q1").value.toLowerCase();
+            const q2 = document.getElementById("q2").value.toLowerCase();
+            const q3 = document.getElementById("q3").value.toLowerCase();
+            const q4 = document.getElementById("q4").value.toLowerCase();
+            const q5 = document.getElementById("q5").value.toLowerCase();
+
+            if (q1 === "shirt" && q2 === "pants" && q3 === "dress" && q4 === "shoes" && q5 === "hat") {
+                document.getElementById("feedback").innerText = "¡Correcto! Puedes avanzar a la siguiente clase.";
+                document.getElementById("nextBtn").style.display = "inline";
+            } else {
+                document.getElementById("feedback").innerText = "Algunas respuestas son incorrectas. Intenta de nuevo.";
+            }
+        }
+    </script>
 </body>
 </html>
