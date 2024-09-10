@@ -15,8 +15,38 @@
             <li>Good morning – Buenos días</li>
             <li>Good night – Buenas noches</li>
         </ul>
-        <button onclick="completeClass(1)">Completar Clase</button>
+        
+        <h2>Actividad: Traduce estas frases</h2>
+        <p>Escribe las traducciones correctas en inglés:</p>
+        
+        <form id="activity1">
+            <label for="q1">1. Hola:</label><br>
+            <input type="text" id="q1" name="q1"><br><br>
+            <label for="q2">2. Buenos días:</label><br>
+            <input type="text" id="q2" name="q2"><br><br>
+            <label for="q3">3. Buenas noches:</label><br>
+            <input type="text" id="q3" name="q3"><br><br>
+            <input type="button" value="Verificar" onclick="validateActivity1()">
+        </form>
+        
+        <p id="feedback"></p>
+
+        <button id="nextBtn" style="display:none;" onclick="completeClass(1)">Avanzar a la Siguiente Clase</button>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        function validateActivity1() {
+            const q1 = document.getElementById("q1").value.toLowerCase();
+            const q2 = document.getElementById("q2").value.toLowerCase();
+            const q3 = document.getElementById("q3").value.toLowerCase();
+
+            if (q1 === "hello" && q2 === "good morning" && q3 === "good night") {
+                document.getElementById("feedback").innerText = "¡Correcto! Puedes avanzar a la siguiente clase.";
+                document.getElementById("nextBtn").style.display = "inline";
+            } else {
+                document.getElementById("feedback").innerText = "Algunas respuestas son incorrectas. Intenta de nuevo.";
+            }
+        }
+    </script>
 </body>
 </html>
