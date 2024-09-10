@@ -3,21 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clase 9: Verbos Comunes</title>
+    <title>Clase 9: Clima</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Clase 9: Verbos Comunes</h1>
-        <p>En esta clase aprenderás algunos verbos comunes en inglés:</p>
+        <h1>Clase 9: Clima</h1>
+        <p>En esta clase aprenderás palabras relacionadas con el clima en inglés:</p>
         <ul>
-            <li>Eat – Comer</li>
-            <li>Drink – Beber</li>
-            <li>Read – Leer</li>
-            <li>Write – Escribir</li>
+            <li>Sunny – Soleado</li>
+            <li>Rainy – Lluvioso</li>
+            <li>Cloudy – Nublado</li>
+            <li>Windy – Ventoso</li>
+            <li>Snowy – Nevado</li>
         </ul>
-        <button onclick="completeClass(9)">Completar Clase</button>
+        
+        <h2>Actividad: Traduce el clima</h2>
+        <p>Escribe las traducciones correctas en inglés:</p>
+        
+        <form id="activity9">
+            <label for="q1">1. Soleado:</label><br>
+            <input type="text" id="q1" name="q1"><br><br>
+            <label for="q2">2. Lluvioso:</label><br>
+            <input type="text" id="q2" name="q2"><br><br>
+            <label for="q3">3. Nublado:</label><br>
+            <input type="text" id="q3" name="q3"><br><br>
+            <label for="q4">4. Ventoso:</label><br>
+            <input type="text" id="q4" name="q4"><br><br>
+            <label for="q5">5. Nevado:</label><br>
+            <input type="text" id="q5" name="q5"><br><br>
+            <input type="button" value="Verificar" onclick="validateActivity9()">
+        </form>
+        
+        <p id="feedback"></p>
+
+        <button id="nextBtn" style="display:none;" onclick="completeClass(9)">Avanzar a la Siguiente Clase</button>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        function validateActivity9() {
+            const q1 = document.getElementById("q1").value.toLowerCase();
+            const q2 = document.getElementById("q2").value.toLowerCase();
+            const q3 = document.getElementById("q3").value.toLowerCase();
+            const q4 = document.getElementById("q4").value.toLowerCase();
+            const q5 = document.getElementById("q5").value.toLowerCase();
+
+            if (q1 === "sunny" && q2 === "rainy" && q3 === "cloudy" && q4 === "windy" && q5 === "snowy") {
+                document.getElementById("feedback").innerText = "¡Correcto! Puedes avanzar a la siguiente clase.";
+                document.getElementById("nextBtn").style.display = "inline";
+            } else {
+                document.getElementById("feedback").innerText = "Algunas respuestas son incorrectas. Intenta de nuevo.";
+            }
+        }
+    </script>
 </body>
 </html>
