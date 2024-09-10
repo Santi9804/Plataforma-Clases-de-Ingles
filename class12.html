@@ -3,20 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clase 12: Verbos en Futuro</title>
+    <title>Clase 12: Verbo To Have</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Clase 12: Verbos en Futuro</h1>
-        <p>En esta clase aprenderás a conjugar verbos en futuro:</p>
+        <h1>Clase 12: Verbo To Have</h1>
+        <p>En esta clase aprenderás cómo usar el verbo "to have" en presente:</p>
         <ul>
-            <li>I will eat – Yo comeré</li>
-            <li>You will eat – Tú comerás</li>
-            <li>He/She will eat – Él/Ella comerá</li>
+            <li>I have – Yo tengo</li>
+            <li>You have – Tú tienes</li>
+            <li>He has – Él tiene</li>
+            <li>She has – Ella tiene</li>
+            <li>It has – Eso tiene</li>
+            <li>We have – Nosotros tenemos</li>
+            <li>They have – Ellos tienen</li>
         </ul>
-        <button onclick="completeClass(12)">Completar Clase</button>
+        
+        <h2>Actividad: Completa las frases</h2>
+        <p>Completa las frases con la forma correcta del verbo "to have":</p>
+        
+        <form id="activity12">
+            <label for="q1">1. I ____ a book.</label><br>
+            <input type="text" id="q1" name="q1"><br><br>
+            <label for="q2">2. She ____ a cat.</label><br>
+            <input type="text" id="q2" name="q2"><br><br>
+            <label for="q3">3. They ____ a house.</label><br>
+            <input type="text" id="q3" name="q3"><br><br>
+            <label for="q4">4. We ____ a car.</label><br>
+            <input type="text" id="q4" name="q4"><br><br>
+            <label for="q5">5. He ____ a dog.</label><br>
+            <input type="text" id="q5" name="q5"><br><br>
+            <input type="button" value="Verificar" onclick="validateActivity12()">
+        </form>
+        
+        <p id="feedback"></p>
+
+        <button id="nextBtn" style="display:none;" onclick="completeClass(12)">Avanzar a la Siguiente Clase</button>
     </div>
-    <script src="script.js"></script>
-</body>
-</html>
+
+    <script>
+        function validateActivity12() {
+            const q1 = document.getElementById("q1").value.toLowerCase();
+            const q2 = document.getElementById("q2").value.toLowerCase();
+            const q3 = document.getElementById("q3").value.toLowerCase();
+            const q4 = document.getElementById("q4").value.toLowerCase();
+            const q5 = document.getElementById("q5").value.toLowerCase();
+
+            if (q1 === "have" && q2 === "has" && q3 === "have" && q4 === "have" && q5 === "has") {
+                document.getElementById("feedback").innerText = "¡Correcto! Has complet
